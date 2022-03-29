@@ -3,8 +3,10 @@ package;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.FlxState;
+import flixel.system.debug.stats.Stats;
 import flixel.text.FlxText;
 import flixel.util.FlxColor;
+import openfl.display.FPS;
 
 class PlayState extends FlxState
 {
@@ -12,6 +14,7 @@ class PlayState extends FlxState
 
 	public static var frames:Int;
 	public static var time:Float;
+	public static var renders:Int;
 
 	override public function create()
 	{
@@ -26,6 +29,8 @@ class PlayState extends FlxState
 	{
 		super.update(elapsed);
 
+		FlxG.autoPause = false;
+
 		var temp = new FlxSprite();
 		temp.makeGraphic(10, 10, 0xFFFFFFFF);
 		temp.x = Random.int(0, FlxG.width);
@@ -35,6 +40,7 @@ class PlayState extends FlxState
 		temp.loadGraphic(AssetPaths.UR_MOM__png);
 		temp.scale.x = Random.float(0.5, 2);
 		temp.scale.y = Random.float(0.5, 2);
+		renders++;
 
 		var temp2 = new FlxSprite();
 		temp2.makeGraphic(10, 10, 0xFFFFFFFF);
@@ -45,6 +51,7 @@ class PlayState extends FlxState
 		temp2.loadGraphic(AssetPaths.img1__jpg);
 		temp2.scale.x = Random.float(0.5, 2);
 		temp2.scale.y = Random.float(0.5, 2);
+		renders++;
 
 		var temp3 = new FlxSprite();
 		temp3.makeGraphic(10, 10, 0xFFFFFFFF);
@@ -55,6 +62,7 @@ class PlayState extends FlxState
 		temp3.loadGraphic(AssetPaths.img2__jpg);
 		temp3.scale.x = Random.float(0.5, 2);
 		temp3.scale.y = Random.float(0.5, 2);
+		renders++;
 
 		var temp4 = new FlxSprite();
 		temp4.makeGraphic(10, 10, 0xFFFFFFFF);
@@ -65,6 +73,7 @@ class PlayState extends FlxState
 		temp4.loadGraphic(AssetPaths.UR_MOM__png);
 		temp4.scale.x = Random.float(0.5, 2);
 		temp4.scale.y = Random.float(0.5, 2);
+		renders++;
 
 		frames++;
 		time += elapsed;
@@ -82,9 +91,9 @@ class PlayState extends FlxState
 		trace(frames);
 		#end
 
-		if (time > 5)
+		if (time > 1)
 		{
-			FlxG.switchState(new ResultState(frames, time));
+			FlxG.switchState(new ResultState(renders, frames));
 		}
 	}
 }

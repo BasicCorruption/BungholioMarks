@@ -11,11 +11,11 @@ class ResultState extends FlxState
 
 	public static var calcr:Int;
 
-	public function new(frames:Int, time:Float)
+	public function new(renders:Int, frames:Int)
 	{
 		super();
 
-		var x = frames / time;
+		var x = renders / frames;
 		var y = x * FlxG.width * FlxG.height * FlxG.drawFramerate;
 		calcr = Math.round(y / 1000000);
 	}
