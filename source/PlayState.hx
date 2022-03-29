@@ -33,6 +33,8 @@ class PlayState extends FlxState
 		temp.color = FlxColor.fromRGB(Random.int(0, 255), Random.int(0, 255), Random.int(0, 255), Random.int(0, 255));
 		add(temp);
 		temp.loadGraphic(AssetPaths.UR_MOM__png);
+		temp.scale.x = Random.float(0.5, 2);
+		temp.scale.y = Random.float(0.5, 2);
 
 		var temp2 = new FlxSprite();
 		temp2.makeGraphic(10, 10, 0xFFFFFFFF);
@@ -40,7 +42,9 @@ class PlayState extends FlxState
 		temp2.y = Random.int(0, FlxG.height);
 		temp2.color = FlxColor.fromRGB(Random.int(0, 255), Random.int(0, 255), Random.int(0, 255), Random.int(0, 255));
 		add(temp2);
-		temp2.loadGraphic(AssetPaths.UR_MOM__png);
+		temp2.loadGraphic(AssetPaths.img1__jpg);
+		temp2.scale.x = Random.float(0.5, 2);
+		temp2.scale.y = Random.float(0.5, 2);
 
 		var temp3 = new FlxSprite();
 		temp3.makeGraphic(10, 10, 0xFFFFFFFF);
@@ -48,7 +52,9 @@ class PlayState extends FlxState
 		temp3.y = Random.int(0, FlxG.height);
 		temp3.color = FlxColor.fromRGB(Random.int(0, 255), Random.int(0, 255), Random.int(0, 255), Random.int(0, 255));
 		add(temp3);
-		temp3.loadGraphic(AssetPaths.UR_MOM__png);
+		temp3.loadGraphic(AssetPaths.img2__jpg);
+		temp3.scale.x = Random.float(0.5, 2);
+		temp3.scale.y = Random.float(0.5, 2);
 
 		var temp4 = new FlxSprite();
 		temp4.makeGraphic(10, 10, 0xFFFFFFFF);
@@ -57,6 +63,8 @@ class PlayState extends FlxState
 		temp4.color = FlxColor.fromRGB(Random.int(0, 255), Random.int(0, 255), Random.int(0, 255), Random.int(0, 255));
 		add(temp4);
 		temp4.loadGraphic(AssetPaths.UR_MOM__png);
+		temp4.scale.x = Random.float(0.5, 2);
+		temp4.scale.y = Random.float(0.5, 2);
 
 		frames++;
 		time += elapsed;
