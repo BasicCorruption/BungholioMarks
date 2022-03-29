@@ -11,9 +11,11 @@ class ResultState extends FlxState
 
 	public static var calcr:Int;
 
-	public function new(renders:Int, frames:Int)
+	public function new(renders:Int, frames:Float)
 	{
 		super();
+
+		FlxG.mouse.visible = true;
 
 		var x = renders / frames;
 		var y = x * FlxG.width * FlxG.height * FlxG.drawFramerate;
@@ -36,6 +38,11 @@ class ResultState extends FlxState
 	public override function update(dt:Float)
 	{
 		super.update(dt);
+
+		if (FlxG.keys.justPressed.F11)
+		{
+			FlxG.fullscreen = !FlxG.fullscreen;
+		}
 
 		#if soft
 		score.text = "Your CPU has recieved " + calcr + " bungholio marks!";
