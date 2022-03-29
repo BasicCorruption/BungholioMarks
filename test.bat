@@ -7,5 +7,5 @@ if %1==gpu (
     lime test windows -Dhard -Dfullscreen -Dttf 
 )
 
+echo Press any key to exit...
 pause>nul
-exit
