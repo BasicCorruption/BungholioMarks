@@ -70,12 +70,10 @@ class LiteMode extends FlxState
 		}
 
 		var p = pixels.data.getInt32(4 * (px + py * pixels.width));
-		// ARGB, each 0-255
 		var a:Int = p >>> 24;
 		var r:Int = (p >>> 16) & 0xff;
 		var g:Int = (p >>> 8) & 0xff;
 		var b:Int = (p) & 0xff;
-		// Or, AARRGGBB in hex:
 		var hex:String = StringTools.hex(p, 8);
 
 		time += elapsed;
