@@ -50,39 +50,6 @@ class FullMode extends FlxState
 		temp.scale.y = Random.float(0.5, 2);
 		renders++;
 
-		var temp2 = new FlxSprite();
-		temp2.makeGraphic(10, 10, 0xFFFFFFFF);
-		temp2.x = Random.int(0, FlxG.width);
-		temp2.y = Random.int(0, FlxG.height);
-		temp2.color = FlxColor.fromRGB(Random.int(0, 255), Random.int(0, 255), Random.int(0, 255), Random.int(0, 255));
-		add(temp2);
-		temp2.loadGraphic(AssetPaths.img1__png);
-		temp2.scale.x = Random.float(0.5, 2);
-		temp2.scale.y = Random.float(0.5, 2);
-		renders++;
-
-		var temp3 = new FlxSprite();
-		temp3.makeGraphic(10, 10, 0xFFFFFFFF);
-		temp3.x = Random.int(0, FlxG.width);
-		temp3.y = Random.int(0, FlxG.height);
-		temp3.color = FlxColor.fromRGB(Random.int(0, 255), Random.int(0, 255), Random.int(0, 255), Random.int(0, 255));
-		add(temp3);
-		temp3.loadGraphic(AssetPaths.img2__png);
-		temp3.scale.x = Random.float(0.5, 2);
-		temp3.scale.y = Random.float(0.5, 2);
-		renders++;
-
-		var temp4 = new FlxSprite();
-		temp4.makeGraphic(10, 10, 0xFFFFFFFF);
-		temp4.x = Random.int(0, FlxG.width);
-		temp4.y = Random.int(0, FlxG.height);
-		temp4.color = FlxColor.fromRGB(Random.int(0, 255), Random.int(0, 255), Random.int(0, 255), Random.int(0, 255));
-		add(temp4);
-		temp4.loadGraphic(AssetPaths.img2__png);
-		temp4.scale.x = Random.float(0.5, 2);
-		temp4.scale.y = Random.float(0.5, 2);
-		renders++;
-
 		frames++;
 		time += elapsed;
 
@@ -99,7 +66,7 @@ class FullMode extends FlxState
 		trace(frames);
 		#end
 
-		if (time > 5)
+		if (renders == 100)
 		{
 			FlxG.switchState(new ResultState(renders, frames));
 		}
