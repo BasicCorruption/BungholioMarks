@@ -66,7 +66,7 @@ class FullMode extends FlxState
 		trace(frames);
 		#end
 
-		if (renders == 100)
+		if (renders == 1000)
 		{
 			FlxG.switchState(new ResultState(renders, frames));
 		}
